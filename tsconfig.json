@@ -19,10 +19,22 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
+    "useDefineForClassFields": false,
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@ui/*": ["src/app/shared/ui/*"],
+      "@domain/*": ["src/app/shared/domain/*"],
+      "@state/*": ["src/app/shared/services/state/*"],
+      "@services/*": ["src/app/shared/services/*"],
+      "@core/*" : ["src/app/core/*"],
+      "@api/*": ["src/app/shared/services/api/*"],
+      "@routes/*": ["src/app/routes/*"],
+      "@env/*": ["src/environments/*"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
