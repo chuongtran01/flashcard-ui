@@ -1,6 +1,6 @@
 import { CommonModule, Location } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import hideHeaderFooterUrls from '@core/layout/hide-header-footer-urls.store';
 
 @Component({
   selector: 'app-header',
@@ -11,11 +11,10 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   #location: Location = inject(Location);
-  #hideHeaderUrls: string[] = ['/auth/login'];
   showHeader: boolean = false;
 
   ngOnInit(): void {
     const currentRoute = this.#location.path();
-    this.showHeader = !this.#hideHeaderUrls.includes(currentRoute);
+    this.showHeader = !hideHeaderFooterUrls.includes(currentRoute);
   }
 }
